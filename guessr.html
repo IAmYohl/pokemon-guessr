@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeBSTGuessr</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>PokeBSTGuessr</h1>
+      <h2 id="pokemon-name">Pokemon Name Placeholder</h2>
+
+      <div class="score-board">
+        <div class="score-item">
+          <div class="score-label">Current Streak</div>
+          <div class="score-value" id="current-streak">0</div>
+        </div>
+        <div class="score-item">
+          <div class="score-label">Best Streak</div>
+          <div class="score-value" id="best-streak">0</div>
+        </div>
+      </div>
+
+      <div class="guesser">
+        <div class="image-container">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+            alt="Pokemon Image Placeholder"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="number"
+            placeholder="Enter your guess here"
+            min="0"
+            max="1000"
+          />
+        </div>
+        <div class="button-group">
+          <button class="submit-btn">Submit Guess</button>
+          <button class="giveup-btn">Give Up</button>
+        </div>
+        <div class="feedback" id="feedback"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

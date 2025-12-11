@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Chakra Petch Bold";
+  src: url("Chakra Petch Bold.ttf");
+}
+@font-face {
+  font-family: "Pokemon Sword";
+  src: url("PokemonSword.otf");
+}
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url("Pokemon Solid.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: "Pokemon Solid", sans-serif;
+  color: #ffcb05;
+  text-shadow: 4px 4px 0px #3b4cca, -2px -2px 0px #3b4cca, 2px -2px 0px #3b4cca,
+    -2px 2px 0px #3b4cca;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+h2 {
+  font-family: "Pokemon Sword", sans-serif;
+  color: #3b4cca;
+  text-shadow: 2px 2px 0px #ddd;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+.score-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.score-label {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+.score-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+button {
+  flex: 1;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Chakra Petch Bold", Arial, sans-serif;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+button:active {
+  transform: translateY(0);
+}
+.submit-btn {
+  background: linear-gradient(135deg, #ffcb05 0%, #ffa000 100%);
+  color: #3b4cca;
+}
+.giveup-btn {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  color: white;
+}
+.guesser {
+  background: linear-gradient(135deg, #f5f5f5 0%, #dcdcdc 100%);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.input-group input {
+  width: 300px;
+  text-align: center;
+}
+.input-group {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 3px solid #3b4cca;
+  border-radius: 10px;
+  font-family: "Chakra Petch Bold", Arial, sans-serif;
+  text-align: center;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feedback.show {
+  opacity: 1;
+  animation: popIn 0.3s ease;
+}
+
+.feedback.correct {
+  background: linear-gradient(135deg, #52c234 0%, #61e744 100%);
+  color: white;
+  animation: popIn 0.3s ease, greenFlash 0.5s ease;
+}
+
+.feedback.incorrect {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  animation: popIn 0.3s ease, shake 0.5s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes greenFlash {
+  0%,
+  100% {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px 20px rgba(82, 194, 52, 0.8);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateX(0);
+  }
+  25% {
+    transform: translate(-50%, -50%) translateX(-10px);
+  }
+  75% {
+    transform: translate(-50%, -50%) translateX(10px);
+  }
+}
